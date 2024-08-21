@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    private int movePower;
-    private Rigidbody rigid;
+    public int movePower;
+    public Rigidbody rigid;
 
     private void Start()
     {
