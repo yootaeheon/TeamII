@@ -2,31 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class Mover : MonoBehaviour
 {
-    private int movePower;
-    private Rigidbody rigid;
+    // Start is called before the first frame update
+    public int movePower;
+    public Rigidbody rigid;
 
-    private void Start()
+    // Update is called once per frame
+    void Update()
     {
-        rigid.AddForce(Vector3.up * movePower, ForceMode.Impulse);
-    }
-
-    public void Update()
-    {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             rigid.AddForce(Vector3.left * movePower, ForceMode.Force);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             rigid.AddForce(Vector3.right * movePower, ForceMode.Force);
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             rigid.AddForce(Vector3.forward * movePower, ForceMode.Force);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             rigid.AddForce(Vector3.back * movePower, ForceMode.Force);
         }
